@@ -1,0 +1,440 @@
+::-webkit-scrollbar {
+    display: none;
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #141414;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #b8b8b8;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.profile h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.profile p {
+    font-size: 18px;
+}
+
+.actions {
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bio p{
+    margin-top: 10px;
+}
+
+.edit-profile-btn {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.logout-btn {
+    background-color: #b8b8b8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.edit-profile-btn:hover,
+.logout-btn:hover {
+    opacity: 0.8;
+}
+
+.container-tabs-btn{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-tabs-btn h1{
+    width: 100%;
+    text-align: center;
+}
+
+.tab-under-view{
+    border-bottom: 2px solid white;
+}
+
+.invisible{
+    display: none;
+}
+
+.container-tabs{
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.book-card {
+    background-color: #242424;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 90%;
+    height: 200px;
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.card-info{
+    padding: 10px;
+}
+
+.card-info h2 {
+    margin: 0;
+}
+
+.card-info h3 {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.card-item {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.review-card{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.review-card .card-item img {
+    width: 90px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.card-info{
+    padding: 10px;
+}
+
+.card-info h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.card-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-info .rate{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    /* border: 2px solid blue; */
+}
+
+.review-container{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    /* border: 2px solid red; */
+}
+
+.review-card {
+    width: 100%;
+    background-color: #242424;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    height: auto;
+    /* border: 2px solid red; */
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #141414;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #b8b8b8;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.profile h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.profile p {
+    font-size: 18px;
+}
+
+.actions {
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bio p{
+    margin-top: 10px;
+}
+
+.edit-profile-btn {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.logout-btn {
+    background-color: #b8b8b8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.edit-profile-btn:hover,
+.logout-btn:hover {
+    opacity: 0.8;
+}
+
+.container-tabs-btn{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-tabs-btn h1{
+    width: 100%;
+    text-align: center;
+}
+
+.tab-under-view{
+    border-bottom: 2px solid white;
+}
+
+.visible{
+    display: block;
+}
+
+.invisible{
+    display: none;
+}
+
+.container-tabs{
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.book-card {
+    background-color: #242424;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 90%;
+    height: 200px;
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.card-info{
+    padding: 10px;
+}
+
+.card-info h2 {
+    margin: 0;
+}
+
+.card-info h3 {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.card-item {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.review-card{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.review-card .card-item img {
+    width: 90px;
+    height: 100%;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.card-info{
+    padding: 10px;
+}
+
+.card-info h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.card-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-info .rate{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    /* border: 2px solid blue; */
+}
+
+.review-container{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    /* border: 2px solid red; */
+}
+
+.review-card {
+    width: 100%;
+    background-color: #242424;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    height: auto;
+    /* border: 2px solid red; */
+}
+

@@ -1,0 +1,170 @@
+<html>
+<head>
+    <title>Book Review</title>
+    {% load static %}
+    <link rel="stylesheet" type='text/css' href="{% static 'css/style.css' %}">
+
+    <style>
+        .carousel-container {
+          width: 80%; /* Adjust as needed */
+          margin: 0 auto;
+          overflow: hidden;
+          position: relative; /* For positioning the navigation buttons */
+        }
+        
+        .carousel {
+          display: flex;
+          animation: scroll 100s ease infinite;
+        }
+        
+        .review-item {
+            margin: 10px;
+          flex: 0 0 calc(100% / 3); 
+          box-sizing: border-box;
+          padding: 20px;
+          text-align: center;
+          color: white;
+          border-radius: 8px;
+          background: linear-gradient(-45deg, rgba(176, 176, 176, 0.1) 10%, rgba(35, 35, 35) 50%, rgba(176, 176, 176, 0.1) 90%);
+        }
+        
+        .review-item img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        
+        .carousel-prev, .carousel-next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          cursor: pointer;
+        }
+        
+        .carousel-prev {
+          left: 10px;
+        }
+        
+        .carousel-next {
+          right: 10px;
+        }
+        
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-100% * 3)); } 
+        }
+        </style>
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <h1><a href="#">BookFlix</a></h1>
+        </div>
+        <a href="/login/">
+        <li class="buttons"> Log In </li>
+        </a>
+    </div>
+    <div class="main">
+        <div class="area">
+            <h1>Read, Review, Repeat!</h1>
+            <h3>Discover new books and share your thoughts with our community of book lovers.</h3>
+            <div class="search">
+                <a href="/login" class="try">Try login to get new books review<i class="fas fa-chevron-right"></i></a>
+            </div>
+            <h4>Ready to read the books and reviews? Enter your email to create or access your account
+            </h4>
+        </div>
+    </div>
+    <div class="container1">
+        <div class="text">
+            <h2>Unlock the World of Books. Find insightful reviews, personalized <br>
+                recommendations, and a vibrant community of book lovers.
+            </h2>
+        </div>
+        <div class="image">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Louis_Fran%C3%A7ais-Dant%C3%A8s_sur_son_rocher.jpg">
+        </div>
+    </div>
+    <div class="container2">
+        <div class="image">
+            <img src="https://marketplace.canva.com/EAFfSnGl7II/2/0/1003w/canva-elegant-dark-woods-fantasy-photo-book-cover-vAt8PH1CmqQ.jpg">
+        </div>
+        <div class="text">
+            <h2>
+                Where Stories Come Alive. Explore a universe of book reviews, <br>
+                connect with authors, and share your literary adventures.
+            </h2>
+        </div>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel">
+          <div class="review-item glass-morphism">
+            <img src="https://xsgames.co/randomusers/assets/avatars/male/46.jpg" alt="Reviewer 1">
+            <p><b><i>"This book was amazing! I couldn't put it down."</i></b></p>
+            <p>-<b><i>John Doe</i></b></p>
+          </div>
+          <div class="review-item glass-morphism">
+            <img src="https://xsgames.co/randomusers/assets/avatars/male/74.jpg" alt="Reviewer 2">
+            <p><b><i>"A captivating story with well-developed characters."</i></b></p>
+            <p>-<b><i>Jane Smith</i></b></p>
+          </div>
+          <div class="review-item glass-morphism">
+            <img src="https://plus.unsplash.com/premium_photo-1689551670902-19b441a6afde?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww" alt="Reviewer 3">
+            <p><b><i>"I highly recommend this book to all fantasy lovers."</i></b></p>
+            <p>-<b><i>Peter Jones</i></b></p>
+          </div>
+          <div class="review-item glass-morphism">
+            <img src="https://xsgames.co/randomusers/assets/avatars/male/31.jpg" alt="Reviewer 1">
+            <p><b><i>"This book was amazing! I couldn't put it down."</i></b></p>
+            <p>-<b><i>John Doe</i></b></p>
+          </div>
+          <div class="review-item glass-morphism">
+            <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Reviewer 2">
+            <p><b><i>"A captivating story with well-developed characters."</i></b></p>
+            <p>-<b><i>Jane Smith</i></b></p>
+          </div>
+          <div class="review-item glass-morphism">
+            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Reviewer 3">
+            <p><b><i>"I highly recommend this book to all fantasy lovers."</i></b></p>
+            <p>-<b><i>Peter Jones</i></b></p>
+          </div>
+        </div>
+        <button class="carousel-prev">&lt;</button>
+        <button class="carousel-next">&gt;</button>
+      </div>
+
+    <div class="footer">
+        <div class="footercon">
+            <div class="flex1">
+                <h5>Questions?
+                </h5>
+                <h5>
+                </h5>
+            </div>
+            <ul class="list1">
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Investor Relation</a></li>
+                <li><a href="">Corporate Information</a></li>
+            </ul>
+            <ul class="list1">
+                <li><a href="">Home</a></li>
+                <li><a href="">Jobs</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+            <ul class="list1">
+                <li><a href="">Account</a></li>
+                <li><a href="">Redeem Gift Cards</a></li>
+                <li><a href="">Privacy</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

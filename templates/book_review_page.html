@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>BookFlix Review</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/book_review_page_style.css' %}">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <h1><a href="/browse">BookFlix</a></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/browse/">Browse</a></li>
+          <li><a href="/subscription/">Subscriptions</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="/user_profile/"><i class="fa fa-user"></i></a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <div class="container">
+        <div class="book-image-container">
+            <img id="book-image" src="{{book.cover_image_url}}" 
+              alt="{{book.book_title}}">
+              <a href="{{book.book_softcopy_link}}">  
+                <button class="btn">
+                  Link to Book
+                </button>
+              </a>
+            <div class="rate">
+                <i class="fa fa-star-o" style="font-size:medium; color: gold; font-size: 40px;"></i>
+                <i class="fa fa-star-o" style="font-size:medium; color: gold; font-size: 40px;"></i>
+                <i class="fa fa-star-o" style="font-size:medium; color: gold; font-size: 40px;"></i>
+                <i class="fa fa-star-o" style="font-size:medium; color: gold; font-size: 40px;"></i>
+                <i class="fa fa-star-o" style="font-size:medium; color: gold; font-size: 40px;"></i>
+            </div>
+        </div>
+
+        <div class="book-info">
+            <div class="book-details">
+                <h1 id="book-title">{{book.book_title}}</h1>
+                <h3 id="book-author"><i>Author(s): </i>
+                  {% for author in authors %}
+                    {{author}}
+                  {% endfor %}
+                </h3>
+                <h5 id="book-publishers"><i>publisher(s): </i>
+                  {% for publisher in publishers %}
+                    {{publisher}}
+                  {% endfor %}
+                </h5>
+                <div class="book-rating">
+                    <h3>Overall ratings: </h3>
+                    <div class="rate">
+                        {% for i in "....." %}
+                          {% if forloop.counter < rating %}
+                            <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                          {% else %}
+                            <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                          {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="book-description">
+                    <p>
+                      {{book.book_description}}
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="categories">
+                  <h3><i>You May Like:</i></h3>
+                  <div class="card">
+                    <div class="card-item">
+                      <img src="https://www.adobe.com/express/create/cover/media_178ebed46ae02d6f3284c7886e9b28c5bb9046a02.jpeg?width=400&format=jpeg&optimize=medium" alt="Book 1">
+                    </div>
+                    <div class="card-item">
+                      <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/contemporary-fiction-night-time-book-cover-design-template-1be47835c3058eb42211574e0c4ed8bf_screen.jpg?ts=1637012564" alt="Book 2">
+                    </div>
+                    <div class="card-item">
+                      <img src="https://images.squarespace-cdn.com/content/v1/5ae2fce87e3c3ae275ea2c9f/1526464175408-W92Q4MSAM40I8YF4HM64/tess-cover.jpg?format=1500w" alt="Book 3">
+                    </div>
+                    <div class="card-item">
+                      <img src="https://www.adobe.com/express/create/cover/media_181e3d2c78f153ae7bf0e19a2faeb9a76e234da30.jpeg?width=400&format=jpeg&optimize=medium" alt="Book 1">
+                    </div>
+                    <div class="card-item">
+                      <img src="https://edit.org/images/cat/book-covers-big-2019101610.jpg" alt="Book 2">
+                    </div>
+                    <div class="card-item">
+                      <img src="https://s26162.pcdn.co/wp-content/uploads/2020/01/Sin-Eater-by-Megan-Campisi.jpg" alt="Book 3">
+                    </div>
+                    <div class="card-item">
+                      <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/action-thriller-book-cover-design-template-3675ae3e3ac7ee095fc793ab61b812cc_screen.jpg?ts=1637008457" alt="Book 4">
+                    </div> 
+                  </div>
+            </div>
+
+            <div class="user-review">
+                <i>What do you think?</i>
+                <textarea placeholder=" Share your thougts....." style="margin-top:10px;"></textarea>
+                <button class="btn" style="margin-top:10px; width:10%; padding: 5px; font-weight: 800; border-radius: 5px ;">Submit</button>
+            </div>
+
+            <div class="review-container">
+                <h3><i>Reviews:</i></h3>
+                <div class="review-card">  
+                  <div class="card-item">
+                    <img src="https://i.pinimg.com/originals/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg" alt="The Da Vinci Code">
+                    <div class="card-info">
+                      <h2>John chang</h2>
+                      <div class="rate">
+                        <i>ratings:</i> &nbsp;
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-item-body">
+                    <p class="review">
+                      <i>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem hic doloribus qui! Eveniet hic consequatur maxime sunt. Aliquid, libero praesentium!
+                      </i>
+                    </p>
+                  </div>
+                  <div class="card-item-footer">
+                      <i class="fa fa-chevron-circle-up" style="font-size:medium; color: rgb(0, 255, 0);"> 34</i>
+                      <i class="fa fa-chevron-circle-down" style="font-size: medium; color: rgb(255, 0, 0);"> 3</i>
+                      <i class="fa fa-comments-o" style="font-size: large;">  73</i>
+                  </div>
+                </div>
+        
+                <div class="review-card">  
+                  <div class="card-item">
+                    <img src="https://assets.entrepreneur.com/content/1x1/300/20180502173958-IMG-0457.jpeg" alt="The Da Vinci Code">
+                    <div class="card-info">
+                      <h2>Joshua Lee</h2>
+                      <div class="rate">
+                        <i>ratings:</i> &nbsp;
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-item-body">
+                    <p class="review">
+                      <i>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vitae minima molestiae dicta eos dolores doloremque natus et laborum soluta deserunt temporibus odio non saepe expedita nulla, iure fuga? Cum.
+                      </i>
+                    </p>
+                  </div>
+                  <div class="card-item-footer">
+                      <i class="fa fa-chevron-circle-up" style="font-size:medium; color: rgb(0, 255, 0);"> 34</i>
+                      <i class="fa fa-chevron-circle-down" style="font-size: medium; color: rgb(255, 0, 0);"> 3</i>
+                      <i class="fa fa-comments-o" style="font-size: large;">  73</i>
+                  </div>
+                </div>
+        
+                <div class="review-card">  
+                  <div class="card-item">
+                    <img src="https://www.famousbirthdays.com/headshots/jackson-kim-2.jpg" alt="The Da Vinci Code">
+                    <div class="card-info">
+                      <h2>Jackson Kim</h2>
+                      <div class="rate">
+                        <i>ratings:</i> &nbsp;
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-item-body">
+                    <p class="review">
+                      <i>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatum ab rem? Suscipit sapiente recusandae aliquam eius animi laboriosam tempore.
+                      </i>
+                    </p>
+                  </div>
+                  <div class="card-item-footer">
+                      <i class="fa fa-chevron-circle-up" style="font-size:medium; color: rgb(0, 255, 0);"> 34</i>
+                      <i class="fa fa-chevron-circle-down" style="font-size: medium; color: rgb(255, 0, 0);"> 3</i>
+                      <i class="fa fa-comments-o" style="font-size: large;">  73</i>
+                  </div>
+                </div>
+        
+                <div class="review-card">  
+                  <div class="card-item">
+                    <img src="https://snworksceo.imgix.net/bdh/1fdf9a8d-f71b-4daa-bb2a-7477b0429848.sized-1000x1000.jpg?w=1500&ar=4%3A3&fit=crop&crop=faces&facepad=3&auto=format" alt="The Da Vinci Code">
+                    <div class="card-info">
+                      <h2>Maya Singh</h2>
+                      <div class="rate">
+                        <i>ratings:</i> &nbsp;
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-item-body">
+                    <p class="review">
+                      <i>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi modi dolor vel aliquid provident animi facere odit quasi ex placeat quos, porro quidem laboriosam dignissimos doloremque nobis cupiditate reprehenderit quis deleniti deserunt? Doloribus eos aspernatur voluptates minima delectus sapiente placeat quas. Dolor sunt ab doloremque itaque ut minima dignissimos suscipit vel, enim laudantium neque corrupti natus adipisci illo consequuntur nemo.
+                      </i>
+                    </p>
+                  </div>
+                  <div class="card-item-footer">
+                      <i class="fa fa-chevron-circle-up" style="font-size:medium; color: rgb(0, 255, 0);"> 34</i>
+                      <i class="fa fa-chevron-circle-down" style="font-size: medium; color: rgb(255, 0, 0);"> 3</i>
+                      <i class="fa fa-comments-o" style="font-size: large;">  73</i>
+                  </div>
+                </div>
+        
+                <div class="review-card">  
+                  <div class="card-item">
+                    <img src="https://d10j3mvrs1suex.cloudfront.net/s:bzglfiles/u/494920/8e4b8567e5c6f9e5a0a2522676cc70e3997abe80/original/olivia-musicstreamingphoto.jpg/!!/b%3AW1sicmVzaXplIiwxODAwXSxbIm1heCJdLFsid2UiXV0%3D/meta%3AeyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ%3D%3D.jpg" alt="The Da Vinci Code">
+                    <div class="card-info">
+                      <h2>Olivia Reynolds</h2>
+                      <div class="rate">
+                        <i>ratings:</i> &nbsp;
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-item-body">
+                    <p class="review">
+                      <i>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing.
+                      </i>
+                    </p>
+                  </div>
+                  <div class="card-item-footer">
+                      <i class="fa fa-chevron-circle-up" style="font-size:medium; color: rgb(0, 255, 0);"> 34</i>
+                      <i class="fa fa-chevron-circle-down" style="font-size: medium; color: rgb(255, 0, 0);"> 3</i>
+                      <i class="fa fa-comments-o" style="font-size: large;">  73</i>
+                  </div>
+                </div>
+        
+                <div class="review-card">  
+                  <div class="card-item">
+                    <img src="https://theboardr.blob.core.windows.net/headshots/50308_900.jpg" alt="The Da Vinci Code">
+                    <div class="card-info">
+                      <h2>Xavier Wright</h2>
+                      <div class="rate">
+                        <i>ratings:</i> &nbsp;
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-item-body">
+                    <p class="review">
+                      <i>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium incidunt fugiat perspiciatis magni placeat perferendis facilis quae, voluptas laboriosam! Sunt dignissimos nam praesentium, eum, error accusantium odio eaque architecto reiciendis itaque quaerat delectus voluptates dolores enim natus atque. Reiciendis, provident iste. Sapiente dolore voluptatem fugit rerum, culpa aliquam cumque beatae! Voluptatibus, a reiciendis laudantium iure et itaque totam ullam neque ipsa, aliquid quasi dignissimos possimus! Aut maiores sit aliquid totam, aspernatur sint quisquam animi soluta laboriosam facere ullam nisi quod vero illo, necessitatibus veritatis nulla nostrum odit et libero. Voluptatibus distinctio esse tempora porro magnam iusto explicabo ipsam. Perspiciatis rem autem consequatur animi, sequi esse a eaque reprehenderit dolorem quis facere optio tempore adipisci quo nobis. Quos provident numquam corrupti unde, id accusantium in tempore? Ullam expedita eaque, saepe asperiores harum culpa impedit error aspernatur earum aperiam distinctio voluptatibus fuga praesentium debitis cumque repellendus fugiat? Molestiae, provident esse amet voluptatem quaerat cumque sapiente dignissimos ipsam fugit dolore, sequi, optio repellendus quia. Ad, fuga voluptate deleniti, tenetur voluptas similique ratione est rerum magni et dolorum nisi voluptatem nam deserunt velit aliquam consectetur eius nemo! Minima, ab earum. Provident eaque architecto, beatae voluptas, nostrum ab quas repellat labore quisquam corporis accusamus sequi?
+                      </i>
+                    </p>
+                  </div>
+                  <div class="card-item-footer">
+                      <i class="fa fa-chevron-circle-up" style="font-size:medium; color: rgb(0, 255, 0);"> 34</i>
+                      <i class="fa fa-chevron-circle-down" style="font-size: medium; color: rgb(255, 0, 0);"> 3</i>
+                      <i class="fa fa-comments-o" style="font-size: large;">  73</i>
+                  </div>
+                </div>
+        
+                <div class="review-card">  
+                  <div class="card-item">
+                    <img src="https://i.pinimg.com/originals/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg" alt="The Da Vinci Code">
+                    <div class="card-info">
+                      <h2>Samantha Rodriguez</h2>
+                      <div class="rate">
+                        <i>ratings:</i> &nbsp;
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-item-body">
+                    <p class="review">
+                      <i>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas suscipit, quae quo, doloribus debitis quod atque cupiditate illo iste nisi eum necessitatibus similique rem in maxime, exercitationem expedita quis distinctio?
+                      </i>
+                    </p>
+                  </div>
+                  <div class="card-item-footer">
+                      <i class="fa fa-chevron-circle-up" style="font-size:medium; color: rgb(0, 255, 0);"> 34</i>
+                      <i class="fa fa-chevron-circle-down" style="font-size: medium; color: rgb(255, 0, 0);"> 3</i>
+                      <i class="fa fa-comments-o" style="font-size: large;">  73</i>
+                  </div>
+                </div>
+        
+                <div class="review-card">  
+                  <div class="card-item">
+                    <img src="https://i.pinimg.com/originals/ae/ec/c2/aeecc22a67dac7987a80ac0724658493.jpg" alt="The Da Vinci Code">
+                    <div class="card-info">
+                      <h2>Thomas Harrison</h2>
+                      <div class="rate">
+                        <i>ratings:</i> &nbsp;
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                        <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-item-body">
+                    <p class="review">
+                      <i>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste enim fugiat libero aperiam rerum?
+                      </i>
+                    </p>
+                  </div>
+                  <div class="card-item-footer">
+                      <i class="fa fa-chevron-circle-up" style="font-size:medium; color: rgb(0, 255, 0);"> 34</i>
+                      <i class="fa fa-chevron-circle-down" style="font-size: medium; color: rgb(255, 0, 0);"> 3</i>
+                      <i class="fa fa-comments-o" style="font-size: large;">  73</i>
+                  </div>
+                </div>
+        
+              </div>
+
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2023 BookFlix. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

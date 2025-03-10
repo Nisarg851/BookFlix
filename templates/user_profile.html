@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/user_profile_style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/browse/">Browse</a></li>
+          <li><a href="/subscription/">Subscriptions</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="profile">
+      <img src="https://w7.pngwing.com/pngs/933/97/png-transparent-computer-icons-avatar-heroes-public-relations-necktie-thumbnail.png" alt="Profile Picture" />
+      <h1>Nisargkumar Mahyavanshi</h1>
+    </div>
+    
+    <div class="bio">
+      <h2>About me</h2>
+      <p>
+        I'm an avid reader with an insatiable curiosity. My favorite pastime is getting lost in the pages of a captivating book, where I can explore new worlds, meet fascinating characters, and learn about different cultures and ideas. I love books that challenge me intellectually and emotionally, and I'm always looking for new recommendations. Whether I'm curled up on the couch with a classic novel or listening to an audiobook during my commute, reading is an essential part of my life.
+      </p>
+    </div>
+
+    <div class="actions">
+<!--      <button class="edit-profile-btn">Edit Profile</button>-->
+      <button class="logout-btn"><a href="/" style="text-decoration: none; color: black;">Log Out</a></button>
+    </div>
+
+    <div class="container-tabs-btn">
+      <h1 class="{% if current_tab == 'books_read' %}tab-under-view{% endif %}">
+        <a href="/user_profile?current_tab=books_read" style="color:white; text-decoration: none;">Books Read</a>
+      </h1>
+      <h1 class="{% if current_tab == 'authors_following' %}tab-under-view{% endif %}">
+        <a href="/user_profile?current_tab=authors_following" style="color:white; text-decoration: none;">Authors following</a>
+      </h1>
+    </div>
+
+    <div class="container-tabs">
+      <div class="books-read {% if current_tab != 'books_read' %}invisible{% endif %}">
+        <div class="book-card">
+          <div class="card-item">
+            <img 
+              src="https://m.media-amazon.com/images/I/91FWKxNXR9L._AC_UF1000,1000_QL80_.jpg" 
+              alt="The Da Vinci Code">
+            <div class="card-info">
+              <h2>The Da Vinci Code</h2>
+              <h3>Dan Brown</h3>
+              <div class="rate">
+                <i>ratings:</i> &nbsp;
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+              </div>
+              <p class="review">
+                The Da Vinci Code is a thrilling mystery novel by Dan Brown that follows symbologist Robert Langdon as he investigates a murder in the Louvre Museum. He uncovers a trail of clues hidden in the works of Leonardo da Vinci, leading him on a quest to uncover a secret society and a religious mystery that could shake the foundations of Christianity. 
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="card-item">
+            <img 
+              src="https://www.adobe.com/express/create/cover/media_178ebed46ae02d6f3284c7886e9b28c5bb9046a02.jpeg?width=400&format=jpeg&optimize=medium" 
+              alt="The Da Vinci Code">
+            <div class="card-info">
+              <h2>Lunar Storm</h2>
+              <h3>Yoon Ha Lee</h3>
+              <div class="rate">
+                <i>ratings:</i> &nbsp;
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+              </div>
+              <p class="review">
+                In Yoon Ha Lee's Moonstorm, Hwa Young, an orphan from a destroyed rebel moon, dreams of becoming an elite lancer pilot for the empire that took her family.  When an attack forces her and classmates into the heart of the imperial fleet, she gets her chance. But as she trains to pilot giant robots, Hwa Young uncovers secrets about the fleet and the rebellion, forcing her to confront her past and question the empire's true motives
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="card-item">
+            <img 
+              src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/contemporary-fiction-night-time-book-cover-design-template-1be47835c3058eb42211574e0c4ed8bf_screen.jpg?ts=1637012564" 
+              alt="The Da Vinci Code">
+            <div class="card-info">
+              <h2>The Memory</h2>
+              <h3>Ciara Greene and Gillian Murphy</h3>
+              <div class="rate">
+                <i>ratings:</i> &nbsp;
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+              </div>
+              <p class="review">
+                "The Memory Book" by Lara Avery tells the story of Sammie McCoy, a girl with a plan for her future until a rare genetic disorder threatens to steal her memories.  Faced with this devastating diagnosis, Sammie starts a memory book, a journal filled with entries, mementos, and messages from loved ones, to preserve the most important parts of her life.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="card-item">
+            <img 
+              src="https://m.media-amazon.com/images/I/81nvn5kTs1L._UF894,1000_QL80_.jpg" 
+              alt="The Da Vinci Code">
+            <div class="card-info">
+              <h2>IF I did it</h2>
+              <h3> O.J. Simpson (with Pablo Fenjves as ghostwriter)</h3>
+              <div class="rate">
+                <i>ratings:</i> &nbsp;
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+              </div>
+              <p class="review">"If I Did It" is O.J. Simpson's controversial book where he gives a hypothetical account of how he would have committed the murders of Nicole Brown Simpson and Ron Goldman, if he were the one responsible.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="authors-following {% if current_tab != 'authors_following' %}invisible{% endif %}">
+        <div class="review-container">
+          <div class="review-card">  
+            <div class="card-item">
+              <img src="https://ew.com/thmb/F8hcs-pSXNzwGD_QzTM5mtayJgs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/dan-brown-2000-83001493b69e442cae02620306e58eac.jpg" alt="The Da Vinci Code">
+              <div class="card-info">
+                <h2>Dan Brown</h2>
+                <div class="rate">
+                  <i>popularity:</i> &nbsp;
+                  <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                  <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                  <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                  <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                  <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="review-card">
+              <div class="card-item">
+                <img src="https://m.media-amazon.com/images/S/amzn-author-media-prod/buvbloakmtfkl3pbase6khc9md.jpg" alt="The Da Vinci Code">
+                <div class="card-info">
+                  <h2>Yoon Ha Lee</h2>
+                  <div class="rate">
+                    <i>popularity:</i> &nbsp;
+                    <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                    <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                    <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                    <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                    <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <div class="card-item">
+                <img src="https://broadwaylicensing.com/wp-content/uploads/J.K.-Rowling_square.png" alt="The Da Vinci Code">
+                <div class="card-info">
+                  <h2>J.K.Rowling</h2>
+                  <div class="rate">
+                    <i>popularity:</i> &nbsp;
+                    <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                    <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                    <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                    <i class="fa fa-star" style="color: gold; font-size: 20px;"></i>
+                    <i class="fa fa-star-o" style="color: gold; font-size: 20px;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
+

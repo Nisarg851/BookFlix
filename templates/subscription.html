@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sspage.css' %}">
+	<script defer src=" {% static 'js/ss_page.js' %}"></script>
+  </head>
+  <body>
+	<div class="container">
+		<header>
+			<div class="card-alert">
+				<h5>Your current plan:</h5>
+				<h3>Free Tier 📖 </h3>
+			</div>
+		</header>
+		<main>
+			<div class="header">
+				<h1>Choose a plan according to your needs!</h1>
+				<div class="plan-toggle">
+					<label class="toggle-btn">
+						<input type="checkbox">
+					</label>
+				</div>
+			</div>
+	
+			<div class="price-cards">
+	
+				<div class="card">
+					<div class="card-header">
+						<h3>Free Tier 📖</h3>
+						<h1>$0/Month</h1>
+					</div>
+	
+					<div class="card-package">
+						<div class="feature">
+							<ion-icon class="icon-circle" name="ellipse"></ion-icon>
+							<p align="justify">🔴 Access to Basic Content: Free tier members can still access basic content on the website, including book reviews, articles, and author interviews.</p>
+						</div>
+						<div class="feature">
+							<ion-icon class="icon-circle" name="ellipse"></ion-icon>
+							<p align="justify">🔴 Opportunity to Build a Following: By submitting book reviews and engaging with the website's community, free members can still build a following and gain visibility as a book reviewer.</p>
+						</div>
+						<div class="feature">
+							<ion-icon class="icon-circle" name="ellipse"></ion-icon>
+							<p align="justify">🔴 Opportunities to Win Prizes: Some book review websites may offer contests and giveaways that are open to all members, including those on the free membership plan.</p>
+						</div>
+						<div class="feature">
+							<ion-icon class="icon-circle" name="ellipse"></ion-icon>
+							<p align="justify">🔴 No Subscription Fees: Unlike the gold membership plans, free tier members do not require any subscription fees, making it a more affordable option for readers who still want to engage with the book review community without paying.</p>
+						</div>
+					</div>
+	
+					<button id="free-btn" type="button" class="button">Choose Plan</button>
+	
+				</div>
+	
+				<div class="card card-pro">
+					<div class="card-header">
+						<h3>Gold Member 🌟 </h3>
+						<h1>$19.99/month</h1>
+					</div>
+	
+					<div class="card-package card-pro-package">
+						<div class="feature">
+							<ion-icon class="icon-circle" name="ellipse"></ion-icon>
+							<p align="justify">🔴 Access to Exclusive Content: As a gold member, you may have access to some of the exclusive book reviews, author Q/A's, and articles that are not available to the general public in the free tier.</p>
+						</div>
+						<div class="feature">
+							<ion-icon class="icon-circle" name="ellipse"></ion-icon>
+							<p align="justify">🔴 Early Access to Books: Gold members may receive early access to new book releases, which means they can read and review the book before it's available to the public.</p>
+						</div>
+						<div class="feature">
+							<ion-icon class="icon-circle" name="ellipse"></ion-icon>
+							<p align="justify">🔴 Priority Review Requests: Gold members may receive priority when submitting book review requests, which means they are likely to receive a review more quickly than non-gold members.</p>
+						</div>
+						<div class="feature">
+							<ion-icon class="icon-circle" name="ellipse"></ion-icon>
+							<p align="justify">🔴 Community Building: Gold membership can provide opportunities for networking and building relationships with fellow book reviewers, authors, and industry professionals through exclusive forums, events, and other activities.</p>
+						</div>
+					</div>
+	
+					<button id="gold-btn" type="button" class="button">Choose Plan</button>
+	
+				</div>
+	
+				<div class="card">
+					<div class="card-header">
+						<h3>Platinum Member 🔷 </h3>
+						<h1>29.99$/Month</h1>
+					</div>
+	
+					<div class="card-package">
+						<div class="feature">
+							<ion-icon class="icon-circle" name="ellipse"></ion-icon>
+							<p align="justify">🔴 Unlimited Access to Exclusive Content: Platinum members will have access to all exclusive content, including premium book reviews, author interviews, and articles that aren't available to free or gold members.</p>
+						</div>
+						<div class="feature">
+							<ion-icon class="icon-circle" name="ellipse"></ion-icon>
+							<p align="justify">🔴 VIP Treatment: Platinum members may receive special VIP treatment, such as priority support, direct communication with the website's team, and invitations to exclusive events.</p>
+						</div>
+						<div class="feature">
+							<ion-icon class="icon-circle" name="ellipse"></ion-icon>
+							<p align="justify">🔴 Advanced Review Copies: Platinum members may receive advanced review copies of highly anticipated books, giving them the opportunity to read and review the book before it is released to anyone else.</p>
+						</div>
+						<div class="feature">
+							<ion-icon class="icon-circle" name="ellipse"></ion-icon>
+							<p align="justify">🔴 Ad-Free Experience: Platinum members may enjoy an ad-free experience on the website, allowing for a seamless and distraction-free reading and reviewing experience.</p>
+						</div>
+					</div>
+	
+					<button id="platinum-btn" type="button" class="button">Choose Plan</button>
+	
+				</div>
+	
+			</div>
+		</main>
+	</div>
+  </body>
+</html>

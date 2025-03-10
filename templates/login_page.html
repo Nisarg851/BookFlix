@@ -1,0 +1,73 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<a href="/browse/">-->
+<!--    <button type="button"> Login </button>-->
+<!--</a>-->
+<!--</body>-->
+<!--</html>-->
+
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" type='text/css' href="{% static 'css/signup.css' %}">
+<title>Login</title>
+</head>
+<body>
+    <header class="showcase">
+        <div class="logo">
+            <h1><a href="/">BookFlix</a></h1>
+        </div>
+
+        <div class="showcase-content">
+            {% block content %}
+            <div class="formm">
+                <form action="" method="POST">
+                    <h1>Log In</h1>
+                    <div class="info">
+                        <input class="email" type="text" placeholder="Enter your username" name="username" id="username"> <br>
+                        <input class="email" type="password" placeholder="Enter password" name="password" id="password">
+                    </div>
+                    {% csrf_token %}
+                    <div class="btn">
+                        <button class="btn-primary" type="submit">Log In</button>
+                    </div>
+                    <div class="help">
+                        <div>
+                            <input value="true" type="checkbox"><label>Remember me</label>
+                        </div>
+                        <a>Need Help ?</a>
+                    </div>
+                </form>
+            </div>
+            {% endblock %}
+            <div class="signup">
+                <p>New to App ?</p>
+                <a href="/signup/">Sign up now</a>
+            </div>
+            <div>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+        <footer>
+            <div class="ftr-content">
+                <div class="contact">
+                    <a href="#">Quesions? Contact us.</a>
+                </div>
+                <div class="ftr">
+                    <p>Gift Card Terms</p>
+                    <p>Terms of Use</p>
+                    <p>Privacy Statement</p>
+                </div>
+            </div>
+        </footer>
+    </header>
+</body>
+</html>
+
+

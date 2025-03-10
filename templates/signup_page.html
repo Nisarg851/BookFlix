@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" type='text/css' href="{% static 'css/signup.css' %}">
+
+<title>Signup</title>
+</head>
+<body>
+    <header class="showcase">
+        <div class="logo">
+            <h1><a href="/">BookFlix</a></h1>
+        </div>
+        <div class="showcase-content">
+            <div class="formm">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <h1>Sign Up</h1>
+                    <div class="info">
+                        <input class="email" type="text" placeholder="Enter username" name="username" id="username"> <br>
+                        <input class="email" type="text" placeholder="Enter your first name" name="first_name" id="first_name"> <br>
+                        <input class="email" type="text" placeholder="Enter your last Name" name="last_name" id="last_name"> <br>
+                        <input class="email" type="email" placeholder="Enter your email address" name="email" id="email"> <br>
+                        <input class="email" type="password" placeholder="Enter password" name="password" id="password">
+                    </div>
+                    <div class="btn">
+                        <button class="btn-primary" type="submit">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <div class="ftr-content">
+                <div class="contact">
+                    <a href="#">Quesions? Contact us.</a>
+                </div>
+                <div class="ftr">
+                    <p>Gift Card Terms</p>
+                    <p>Terms of Use</p>
+                    <p>Privacy Statement</p>
+                </div>
+            </div>
+        </footer>
+    </header>
+</body>
+</html>
